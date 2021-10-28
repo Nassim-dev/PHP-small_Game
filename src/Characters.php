@@ -1,8 +1,8 @@
 <?php
 
 class Character {
-    private $name;
-    private $hp;
+    private $name = "";
+    private $hp = 100;
     private $atk;
     private $def;
 
@@ -48,7 +48,6 @@ class Character {
 
 }
 
-$alex = new Character('alex', 100, 20, 20);
-
-echo $alex;
+// $alex = new Character('alex', 100, 20, 20);
+// echo $alex;
 ?>
