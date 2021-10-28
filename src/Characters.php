@@ -1,4 +1,5 @@
 <?php
+<<<<<<< Updated upstream
 
 class Character {
     private $name = "";
@@ -50,4 +51,7 @@ class Character {
 
 // $alex = new Character('alex', 100, 20, 20);
 // echo $alex;
+=======
+ echo 'hello'
+>>>>>>> Stashed changes
 ?>
