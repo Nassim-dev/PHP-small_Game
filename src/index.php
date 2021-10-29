@@ -1,5 +1,22 @@
 <?php
 
+//Create character
+if (isset($_POST['creer']) && isset($_POST['personnageNom'])) {
+    switch ($_POST['personnageType']) {
+        case 'magicien' :
+            $perso = new Magicien(['nom' => $_POST['personnageNom']]);
+            break ;
+        case 'guerrier' :
+            $perso = new Guerrier(['nom' => $_POST['personnageNom']]);
+            break ;
+        default :
+            $message = 'Vous devez choisir entre un Magicien ou un Guerrier';
+            unset($perso);
+            break;
+    }
+
+}
+
 //Each scenario text
 /* switch ($retour)
 {
