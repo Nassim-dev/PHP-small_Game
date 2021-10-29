@@ -6,6 +6,14 @@ class Character {
     // coup basique random (5,25)
     private $atk;
     private $def;
+    private $timeasleep;
+
+    const HIMSELF= 1; //Detect if the user hit himself
+    const NO_MANA = 2; //Detect if the "Magician" user don't have mana 
+    const CHARACTER_DEAD = 3; // Detect if a character is already dead
+    const CHARACTER_HIT = 4; // Detect if a user hit someone
+    const HYPNOTISED = 5; //Detect if the user is hypnotised (asleep)
+    const CHARACTER_ASLEEP = 6; //Detect if the user is currently asleep
 
     public function __construct($name, $hp, $atk, $def) 
     {
