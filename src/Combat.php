@@ -21,13 +21,13 @@ class Combat{
         }
 
         if ($compteurAtkGrosseAtk == 3) {
-            return $player.$atk;
+            return $player->$atk;
         }
     }
 
     public function combat($player1,$player2){
         $turns = 0;	
-        while ($player1.$hp > 0 or $player2.$hp > 0){
+        while ($player1->$hp > 0 or $player2->$hp > 0){
             if($turns % 2 != 0) {
                 askAttack();
             }
