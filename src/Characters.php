@@ -1,9 +1,9 @@
 <?php
-<<<<<<< Updated upstream
 
 class Character {
     private $name = "";
     private $hp = 100;
+    // coup basique random (5,25)
     private $atk;
     private $def;
 
@@ -47,11 +47,13 @@ class Character {
         $this->def=$def;
     }
 
+    public function coupBasique(Character $character){
+        $coupBasique = rand(5,25);
+        return $coupBasique;
+    }
+
 }
 
 // $alex = new Character('alex', 100, 20, 20);
 // echo $alex;
-=======
- echo 'hello'
->>>>>>> Stashed changes
 ?>

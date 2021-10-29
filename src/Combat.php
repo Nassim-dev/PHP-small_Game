@@ -11,7 +11,22 @@ class Combat{
         $this->player2 = new Characters();
     }
 
-    // Faire fonction Combat
+    public function chacunSonTour(){
+        
+        // if () {
+        //     # code...
+        // }
+        return true;
+    }
+
+    public function combat($player1,$player2){
+        while ($player1.$hp > 0 or $player2.$hp > 0){
+
+            
+        }
+    }
+
+
     // Améliorer les capacités spécifiques aux perso.
     // Assembler le tout avec l'index.php
     
