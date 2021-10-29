@@ -6,6 +6,7 @@ class Character {
     // coup basique random (5,25)
     private $atk;
     private $def;
+    private $class;
     private $timeasleep;
 
     const HIMSELF= 1; //Detect if the user hit himself
@@ -15,12 +16,14 @@ class Character {
     const HYPNOTISED = 5; //Detect if the user is hypnotised (asleep)
     const CHARACTER_ASLEEP = 6; //Detect if the user is currently asleep
 
-    public function __construct($name, $hp, $atk, $def) 
+    public function __construct($name, $hp, $atk, $def, $class, $timeasleep) 
     {
         $this->name = $name;
         $this->hp = $hp;
         $this->atk = $atk;
         $this->def = $def;
+        $this->class = $class;
+        $this->timeasleep = $timeasleep;
     }
 
     public function getName() {

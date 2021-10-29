@@ -1,0 +1,3 @@
+1 - Utilisation de protected, private, public ?
+•
+2 - Utilité d'hydratation un peu flou...

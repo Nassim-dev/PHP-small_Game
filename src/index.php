@@ -1,3 +1,46 @@
+<?php
+
+//Each scenario text
+/* switch ($retour)
+{
+    case Characters::HIMSELF :
+        $message = 'Mais...Pourquoi tu veux te frapper...Stupid idiot !!!';
+        
+        break;
+
+    case Characters::NO_MANA :
+        $message = "Tu n\'as plus de mana";
+        break;
+    
+    case Characters::CHARACTER_HIT :
+        $message = 'Le personnage a bien été frappé';
+        
+        $manager->updateCharacters($perso);
+        $manager->updateCharacters($persoAFrapper);
+        
+        break;
+    
+    case Characters::CHARACTER_DEAD :
+        $message = 'Vous avez tué ce personnage !';
+        
+        $manager->updateCharacters($perso);
+        $manager->deleteCharacters($persoAFrapper);
+        
+        break;
+
+    case Characters::HYPNOTISED :
+        $message = 'Vous vous êtes endormi...Vous ne pouvez plus agir pendant 15 secondes...';
+
+        break;
+    
+    case Characters::CHARACTER_ASLEEP :
+        $message = 'Vous êtes endormi et ne pouvez pas frapper un adversaire';
+        
+        break;
+} */
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,12 +80,20 @@
     <h1>Fighting Club</h1>
     <div class="container">
         <div class="joueur">
-            <label for="name1">Joueur 1</label>
-            <input type="text" id="name1" placeholder="Entrez votre pseudo">
-        </div>
-        <div class="joueur">
-            <label for="name2">Joueur 2</label>
-            <input type="text" id="name2" placeholder="Entrez votre pseudo">
+            <form action="" method="post">
+                <label for="name">Joueur 1</label>
+                <input type="text" id="name" maxlength="20" placeholder="Entrez votre pseudo">
+                <div class="col-xs-12 col-sm-8 col-md-9">
+                    <label for="personnageType" class="col-xs-12 col-sm-4 col-md-3 control-label">Type du personnage : </label>
+                    <select class="form" name="personnageType">
+                        <option value="magicien">Magicien</option>
+                        <option value="guerrier">Guerrier</option>
+                    </select>
+                    <input type="submit" value = "Créer ce personnage" name="personnageType" />
+                </div>
+                
+                <button>Play</button>
+            </form>
         </div>
     </div>
 </body>
