@@ -49,10 +49,6 @@ class Combat{
             
         }
     }
-
-
-    // Améliorer les capacités spécifiques aux perso.
-    // Assembler le tout avec l'index.php
     
 }
 
