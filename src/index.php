@@ -14,7 +14,6 @@ if (isset($_POST['creer']) && isset($_POST['personnageNom'])) {
             unset($perso);
             break;
     }
-
 }
 
 //Each scenario text
