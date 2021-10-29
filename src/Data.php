@@ -1,7 +1,7 @@
 <?php
 
 $servname = 'localhost:8080';
-$bddname = 'pdodb';
+$bddname = 'db';
 $user = 'root';
 $pass = 'example';
 
@@ -19,7 +19,12 @@ $requête_sql = "CREATE TABLE 'Character'(
     'Hp' INT unsigned NOT NULL DEFAULT '100',
     'Atk' INT unsigned NOT NULL,
     'Def' INT unsigned NOT NULL,
-    ";
+    ) CHARSET = utf8";
 
+$response = $bdd->query( $requête_sql );
+
+while ($data = $response->fetch()) {
+    var_dump($data);
+}
 
                 
