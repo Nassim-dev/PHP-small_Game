@@ -3,6 +3,7 @@
 class Character {
     private $name = "";
     private $hp = 100;
+    private $mana = 1;
     // coup basique random (5,25)
     private $atk;
     private $def;

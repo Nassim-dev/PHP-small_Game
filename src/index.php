@@ -1,6 +1,6 @@
 <?php
 
-//Create character
+//Creation du personnage
 if (isset($_POST['creer']) && isset($_POST['personnageNom'])) {
     switch ($_POST['personnageType']) {
         case 'magicien' :
@@ -13,14 +13,59 @@ if (isset($_POST['creer']) && isset($_POST['personnageNom'])) {
             $message = 'Vous devez choisir entre un Magicien ou un Guerrier';
             unset($perso);
             break;
+    } 
+    
+    // Si le personnage est valide => création du personnage
+    if(isset($perso))
+    {
+        if (!$perso->validName())
+        {
+            $message = 'Le nom choisi n\'est pas valide.';
+            unset($perso);
+        }
+        
+        elseif ($manager->ifPersonnageExist($perso->getNom()))
+        {
+            $message = 'Le nom du personnage est déjà utilisé.';
+            unset($perso);
+        }
+        
+        else
+        {
+            $manager->addPersonnage($perso);
+            $message = 'Le personnage est créé.';
+        }
+    }
+    
+    else {
+        
+        if ($perso->toBeAsleep()) {
+            echo 'Un magicien vous a endormi ! Vous allez vous réveiller dans ' . $perso->reveil() . '.';
+        }   
+        
+        else {
+            foreach ($persos as $onePerson) {
+                echo '<a href="?frapperUnPersonnage=' . $onePerson->getId() . '">' . htmlspecialchars($onePerson->getNom()) . '</a> (Dégats : ' . $onePerson->getDegats() . ' - type : ' . $onePerson->getType() . ')';
+                
+                if ($perso->getType() == 'magicien') {
+                    echo ' - <a href="?envouter=' . $onePerson->getId() . '">Lancer un sort</a>';
+                }
+            }
+        }
     }
 }
+
+if (empty($persos)) {
+    echo 'Il n\'y aucun adversaire';
+}
+
+
 
 //Each scenario text
 /* switch ($retour)
 {
     case Characters::HIMSELF :
-        $message = 'Mais...Pourquoi tu veux te frapper...Stupid idiot !!!';
+        $message = 'Mais...Pourquoi tu veux te frapper !';
         
         break;
 
@@ -111,6 +156,14 @@ if (isset($_POST['creer']) && isset($_POST['personnageNom'])) {
                 <button>Play</button>
             </form>
         </div>
+        <fieldset>
+            <legend>Mes informations</legend>
+            <!-- <p>
+                Nom : <?= htmlspecialchars($perso->getNom()) ?><br>
+                Dégâts : <?= $perso->getDegats() ?><br>
+                Type : <?= ucfirst($perso->getType()) ?><br>
+            </p> -->
+        </fieldset>
     </div>
 </body>
 </html>
